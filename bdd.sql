@@ -39,7 +39,6 @@ CREATE TABLE IF NOT EXISTS `order` (
     `created_at` timestamp NULL DEFAULT NULL,
     `updated_at` timestamp NULL DEFAULT NULL,
     `shipping_address_id` int(10) unsigned DEFAULT NULL,
-    `Colonne 10` int(10) unsigned DEFAULT NULL,
     PRIMARY KEY (`id`),
     KEY `client_id` (`user_id`),
     KEY `shipping_address_id_foreign` (`shipping_address_id`),
@@ -110,7 +109,7 @@ DROP TABLE IF EXISTS `shipping_address`;
 CREATE TABLE IF NOT EXISTS `shipping_address` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `city` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-    `postal_code` int(11) unsigned DEFAULT NULL,
+    `postal_code` int(11) DEFAULT NULL,
     `address` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
     PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
