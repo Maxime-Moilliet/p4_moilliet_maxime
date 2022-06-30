@@ -26,12 +26,8 @@ class Utils
      */
     public function getRandomElementFormArrayOfIds(string $table): int
     {
-        $arrayIds = [];
-        $collection = $this->pdo->query('SELECT id FROM `' . $table . '`')->fetchAll(\PDO::FETCH_ASSOC);
-        foreach ($collection as $item) {
-            $arrayIds[] = (int)$item['id'];
-        }
-        return $this->faker->randomElement($arrayIds);
+        $collectionArray = $this->pdo->query('SELECT id FROM `' . $table . '`')->fetchAll(\PDO::FETCH_COLUMN);
+        return $this->faker->randomElement($collectionArray);
     }
 
     /**
