@@ -11,7 +11,7 @@ try {
     $utils = new Utils($pdo, $faker);
 
     // Insert Role
-    $roleUserList = ['subscriber', 'chef', 'delivery', 'admin'];
+    $roleUserList = ['customer', 'chef', 'deliverer', 'admin'];
     $stmtRoleUser = $utils->getStmt('INSERT INTO role (name) VALUES (:name)');
     foreach ($roleUserList as $role) {
         $stmtRoleUser->execute([
